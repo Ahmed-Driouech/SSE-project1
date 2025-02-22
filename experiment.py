@@ -21,7 +21,7 @@ class Experiment:
         time.sleep(1)
 
         #scroll through page
-        for i in range(65):
+        for i in range(1):
             pyautogui.scroll(-5)
             time.sleep(0.75)
 
