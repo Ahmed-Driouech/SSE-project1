@@ -13,6 +13,8 @@ class Experiment:
     def open_file(self):
         os.system(f"open -a '{self.browser}' '{self.url}'")
 
+    def close_file(self):
+        os.system(f"""osascript -e 'tell application "{self.browser}" to quit'""")
 
     def scroll(self):
         #activate window
@@ -21,7 +23,7 @@ class Experiment:
         time.sleep(1)
 
         #scroll through page
-        for i in range(1):
+        for i in range(65):
             pyautogui.scroll(-5)
             time.sleep(0.75)
 
@@ -47,11 +49,12 @@ class Experiment:
         self.open_file()
         self.scroll()
         self.search_for_word()
+        self.close_file()
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("url")
-    parser.add_argument("--browser", default="default",
+    parser.add_argument("browser", default="Google Chrome",
                         choices=["Google Chrome", "safari"])
     parser.add_argument("search_word")
 
