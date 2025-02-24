@@ -36,8 +36,14 @@ To ensure unbiased and accurate energy consumption data, we have adhered to the 
 
 ### PDF Readers Tested
 
-We selected a set of commonly used PDF readers for this study:
-- **Adobe Acrobat Reader**: A feature-rich, widely used PDF reader.
+### PDF Readers Tested
+
+We selected two built-in PDF readers integrated into widely used web browsers for this study:
+
+- **Built-in Google Chrome PDF Reader**: Google Chrome’s PDF reader is integrated directly into the browser, offering a fast and convenient way to open and view PDF files without requiring any additional software. It supports basic functions such as zooming, searching text, and navigating through pages. However, it lacks advanced features such as annotations, text editing, or form filling, focusing primarily on rendering and reading PDFs efficiently. Its cross-platform nature makes it a common choice for users across different operating systems, including Windows, macOS, and Linux.
+
+- **Built-in Safari PDF Reader**: Safari’s PDF reader, integrated into Apple’s default web browser on macOS and iOS devices, provides a streamlined PDF viewing experience. Like Chrome’s PDF reader, it offers basic features like zooming, text search, and page navigation. However, Safari benefits from deeper integration with macOS, including support for macOS system-wide features like annotation via Preview and Continuity across Apple devices. Safari’s PDF reader is optimized for energy efficiency on macOS devices, benefiting from Apple's hardware-software synergy.
+
 
 ### Test Scenarios
 
