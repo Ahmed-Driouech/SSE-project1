@@ -16,30 +16,22 @@ def open_terminal():
     command = f'open -a Terminal "{energiBridge_path}"'
     subprocess.run(command, shell=True)
 
+
 def close_terminal():
-    os.system("osascript -e 'tell application \"Terminal\" to close front window'")
+    max_attempts = 3
+    for attempt in range(max_attempts):
+        os.system("osascript -e 'tell application \"Terminal\" to close front window'")
+        time.sleep(1)
+        # Check if Terminal is still running with front window
+        result = subprocess.run(
+            ["osascript", "-e", 'tell application "Terminal" to count windows'],
+            capture_output=True,
+            text=True
+        )
+        if result.stdout.strip() == "0":
+            break
+        time.sleep(1)
 
-
-def run_experiment(command):
-    open_terminal()
-    time.sleep(3)
-    pyautogui.write(command, interval=0.05)
-    pyautogui.press('enter')
-    time.sleep(10)
-    close_terminal()
-
-def concatenate_csvs(file_list, output_file):
-    #Combine multiple CSV files into one
-  
-    full_paths = [os.path.join(BASE_DIR, f) for f in file_list]
-    dfs = [pd.read_csv(f) for f in full_paths]
-    combined_df = pd.concat(dfs, ignore_index=True)
-   
-    full_output_path = os.path.join(BASE_DIR, output_file)
-    combined_df.to_csv(full_output_path, index=False)
-    
-    for f in full_paths:
-        os.remove(f)
 
 def main():
     parser = argparse.ArgumentParser()
@@ -48,41 +40,43 @@ def main():
     parser.add_argument("search_word")
     args = parser.parse_args()
 
-    # Final output files
+    # Define output files
+    combined_output = os.path.join(BASE_DIR, f"{args.results_prefix}_combined.csv")
     chrome_output = os.path.join(BASE_DIR, f"{args.results_prefix}_chrome.csv")
     safari_output = os.path.join(BASE_DIR, f"{args.results_prefix}_safari.csv")
 
-    # Temporary file lists
-    chrome_temp_files = []
-    safari_temp_files = []
+    # Create alternating browser sequence
+    browser_sequence = []
+    for i in range(1):
+        browser_sequence.extend(['--browser "Google Chrome"', '--browser "safari"'])
 
-    # Define browsers
-    browser_runs = ["Google Chrome", "safari"]
+    # Build the full command with all 60 browser tests
+    browser_args = ' '.join(browser_sequence)
+    command = f'./target/release/energibridge -o {combined_output} --summary {experiment_path} {args.url} {browser_args} {args.search_word}'
 
-    for i in range(1):  
-        for browser in browser_runs:
-            
-            temp_output = f"{args.results_prefix}_{browser.lower().replace(' ', '_')}_temp_{i + 1}.csv"
-            full_temp_path = f"{BASE_DIR}{temp_output}"
-            command = f'./target/release/energibridge -o {full_temp_path} --summary {experiment_path} {args.url} --browser "{browser}" {args.search_word}'
+    # Run single energibridge session for all tests
+    print("Starting energibridge session for all tests...")
+    open_terminal()
+    time.sleep(3)
+    pyautogui.write(command, interval=0.05)
+    pyautogui.press('enter')
 
-            print(f"Running experiment {i + 1}/30 for {browser}...")
-            run_experiment(command)
-            time.sleep(10)  # Delay between runs to avoid overlap
+    # Wait for all tests to complete
+    total_wait_time = 60 * 60  # Adjust based on actual test duration
+    time.sleep(4)
 
-          
-            if browser == "Google Chrome":
-                chrome_temp_files.append(temp_output)
-            else:  # Safari
-                safari_temp_files.append(temp_output)
+    # Close energibridge session
+    close_terminal()
 
-    # Combine results into final CSV files
-    print("Combining Chrome results...")
-    concatenate_csvs(chrome_temp_files, chrome_output)
-    print("Combining Safari results...")
-    concatenate_csvs(safari_temp_files, safari_output)
-    #command = f'./target/release/energibridge -o {args.results}.csv --summary {experiment_path} {args.url} --browser "{args.browser}" {args.search_word}'
-    #close_terminal()
+    # Split results into separate files by browser
+    print("Splitting results by browser...")
+    df = pd.read_csv(combined_output)
+    chrome_df = df[df['browser'] == 'Google Chrome']
+    safari_df = df[df['browser'] == 'safari']
+
+    chrome_df.to_csv(chrome_output, index=False)
+    safari_df.to_csv(safari_output, index=False)
+    os.remove(combined_output)
 
 
 if __name__ == "__main__":
