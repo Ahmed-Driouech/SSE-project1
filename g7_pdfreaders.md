@@ -24,6 +24,16 @@ The ultimate goal is to provide insights into energy-efficient software choices 
 
 ## Methodology
 
+We conducted the experiment on two different PDF readers in browsers: the built-in Safari PDF reader and the Google Chrome PDF reader. With the experiment we simulated a typical reading session by opening a XX-page PDF file and interacting with it using common features. We includes actions that typical users might perform frequently, such as scrolling through the document and searching for specific keywords. The workflow for the experiment was as follows:
+
+1. Open the browser.
+2. Load the PDF file
+3. Scroll through the entire document at a controlled speed
+4. Use the dearch function to find a specific term multiple times (the first hit might not be what the person is looking for)
+5. Close the document and quit the browser
+
+Each iteration of the experiment lasted approximately 3 minutes. This includes a 60 second wait time between runs to prevent tail effect. With 60 iterations in total we have a total experiment runtime of about 3 hours.
+We ran an automated script that opened the PDF in both browsers and performed the workflow actions. Each test was repeated 30 times per browser with the order of execution being interleaved (meaning, 1 experiment using Chrome, then 1 using Safari, 1 using Chrome etc).
 ### Experiment Setup
 
 To ensure unbiased and accurate energy consumption data, we have adhered to the following best practices:
@@ -32,7 +42,7 @@ To ensure unbiased and accurate energy consumption data, we have adhered to the 
    
 2. **Fixed System Settings**: To maintain consistency across tests, system settings such as screen brightness and resolution were fixed throughout the experiment. Any potential energy-saving features, like automatic brightness adjustment, were disabled to avoid interference.
 
-3. **Measurement Tools**: 
+3. **Measurement Tools**: We used the EnergiBridge tool to meausre the energy consumption, cpu memory use, frequency and voltage over a period of time.
 
 ### PDF Readers Tested
 
