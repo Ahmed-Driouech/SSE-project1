@@ -11,11 +11,11 @@ summary: |-
 
 ## 1.1 Context & Motivation
 
-Portable Document Format (PDF) has become a universal standard for sharing and viewing documents across various settings (Aperto, 2020). Johnson (2020) has demonstrated that PDFs are by far the most commonly used document format. The graph below, taken from Johnson (2020), highlights the significant difference in usage, with over 80% of digital documents being in PDF format. While reading PDFs is generally considered a lightweight task, differences in software architectures can lead to varying levels of energy consumption. Seemingly minor design choices, such as background services or rendering complexity, can have a considerable impact on power usage, particularly when documents are viewed for extended periods (Procaccianti et al., 2016).
+Portable Document Format (PDF) has become a universal standard for sharing and viewing documents across various settings (Aperto, [2020](https://doi.org/10.1007/978-3-662-48986-4_301355)). Johnson ([2021](https://pdfa.org/pdfs-popularity-online/)) has demonstrated that PDFs are by far the most commonly used document format. The graph below, taken from Johnson ([2021](https://pdfa.org/pdfs-popularity-online/)), highlights the significant difference in usage, with over 80% of digital documents being in PDF format. While reading PDFs is generally considered a lightweight task, differences in software architectures can lead to varying levels of energy consumption. Seemingly minor design choices, such as background services or rendering complexity, can have a considerable impact on power usage, particularly when documents are viewed for extended periods (Procaccianti et al., [2016](https://doi.org/10.1016/j.jss.2016.02.035)).
 
 
 ![](images/pdf_vs_others.png)
-*Graph showing the distribution of different digital document formats (Johnson, 2020)*
+*Graph showing the distribution of different digital document formats (Johnson, [2021](https://pdfa.org/pdfs-popularity-online/))*
 
 For users who frequently view PDFs, inefficient software can result in shorter battery life, more frequent recharging, and an overall higher environmental footprint. 
 
@@ -23,7 +23,7 @@ For users who frequently view PDFs, inefficient software can result in shorter b
 
 Students are among the most impacted by PDFs, as textbooks, lecture notes, and assignment materials are predominantly shared in this format, requiring prolonged screen time on laptops. Even a slight improvement in power efficiency can reduce mid-day charging needs, minimize battery wear, and potentially lower electricity costs over a semester.
 
-Sustainability has also become an increasing priority in higher education (Machado et al., 2023). By identifying which PDF reader consumes less power, this project can provide students with both practical benefits, such as fewer recharges and longer battery life, and environmentally conscious alternatives that align with current sustainability initiatives.
+Sustainability has also become an increasing priority in higher education (Machado et al., [2023](https://doi.org/10.1016/j.jss.2016.02.035)). By identifying which PDF reader consumes less power, this project can provide students with both practical benefits, such as fewer recharges and longer battery life, and environmentally conscious alternatives that align with current sustainability initiatives.
 
 ## 1.3 Research Objective
 
@@ -225,7 +225,7 @@ The script will output **summary statistics** in the console, and all generated 
 # 7. References
 Aperto, F., & , S. (2020). Portable Document Format. _Definitions_. [https://doi.org/10.1007/978-3-662-48986-4_301355](https://doi.org/10.1007/978-3-662-48986-4_301355).
 
-Johnson, D. (2021, July 21). _PDF’s popularity online_. PDF Association. [https://pdfa.org/pdfs-popularity-online/](https://pdfa.org/pdfs-popularity-online/)
+Johnson, D. (2021, July 21). _PDF’s popularity online_. PDF Association. [https://pdfa.org/pdfs-popularity-online/](https://pdfa.org/pdfs-popularity-online/).
 
 Machado, C., Davim, J., Alberti, M., García, J., Suárez, N., Juan, G., Mosquera, C., & , F. (2023). Sustainability in the Modernization of Higher Education: Curricular Transformation and Sustainable Campus—A Literature Review. _Sustainability_. [https://doi.org/10.3390/su15118615](https://doi.org/10.3390/su15118615).
 
