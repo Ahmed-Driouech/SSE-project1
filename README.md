@@ -57,7 +57,7 @@ The code is **license-free** and can be modified or extended as needed.
 
 ## License
 
-This project is **open-source** and provided under an MIT license. Feel free to use, modify, and improve the code as needed.
+This project is **open-source**. Feel free to use, modify, and improve the code as needed.
 
 ## Authors
 
