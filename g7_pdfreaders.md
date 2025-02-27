@@ -83,13 +83,10 @@ The device operated on **macOS Sonoma 14.2.1 (23C71)**. To maintain consistency 
 Measuring energy consumption was achieved using [EnergiBridge](https://github.com/tdurieux/EnergiBridge), a tool designed for detailed power measurement. The key metrics recorded during each test included:
 
 1. **Total Energy Consumption (Joules):**  
-   - Determined by calculating the difference between initial and final cumulative energy values from EnergiBridge's logs.
+   - Determined by calculating the total power over the elapsed time between initial and final values from EnergiBridge's logs.
 
 2. **Average Power Consumption (Watts):**  
    - Calculated by averaging the power readings over the duration of each test.
-
-3. **Elapsed Time (Seconds):**  
-   - Measured from the first to the last timestamp in the log to ensure consistency in test durations.
 
 ### Data Analysis
 
@@ -130,7 +127,7 @@ A **60-second interval** was observed between consecutive tests to allow the sys
 
 # 3. Results
 
-This section presents the findings of the energy consumption analysis for Chrome and Safari when viewing PDFs. The results include detected runs, summary statistics, normality testing, and statistical comparisons. No interpretations or discussions are provided in this section.
+This section presents the findings of the energy consumption analysis for Chrome and Safari when viewing PDFs. The results include detected runs, summary statistics, normality testing, and statistical comparisons.
 
 ### 3.1 Outlier Detection
 
