@@ -64,7 +64,7 @@ To automate user interactions such as scrolling and text searching within the PD
 
 ### Test Document
 
-The same **50-page PDF document**, containing a textbook chapter, was used for all tests.
+The same **13-page PDF document**, containing a research paper, was used for all tests.
 
 ## 2.2 Controlled Testing Environment
 To isolate the PDF reader as the primary variable affecting energy consumption, a controlled environment was established with the following measures:
@@ -110,8 +110,8 @@ To stabilize the CPU temperature and prevent artificially low energy readings in
 For each PDF reader, an automated script performed the following actions:
 
 1. **Launch** the PDF reader and open the test document.
-2. **Scroll** through all 50 pages at a controlled pace (~1 min per 5 pages).
-3. **Perform text searches** using terms such as `"battery"` and `"energy"` to simulate typical user behavior.
+2. **Scroll** through all 13 pages at a controlled pace (~1 min per 5 pages).
+3. **Perform text searches** using the word `"LLM"`, and skipping to the 10th occurrence, to simulate typical user behavior.
 4. **Close** the application upon completion of the tasks.
 
 ### 3. Repetition and Randomization
