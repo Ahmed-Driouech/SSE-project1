@@ -28,9 +28,13 @@ pip install -r requirements.txt
 ## Usage
 
 ### 1. Run the Experiment
-This script launches **Chrome** and **Safari**, automates PDF interactions, and records power consumption.
+
+This script launches **Chrome** and **Safari**, automates PDF interactions, and records power consumption. To run the script you should provide the following arguments:
+- **results_prefix:** name of the results csv file.
+- **url:** a link to the pdf file to use in the experiment
+- **search_word:** A word to search for in the provided document
 ```bash
-python main.py
+python main.py <results_prefix> <url> <search_word>
 ```
 
 ### 2. Analyze Results
