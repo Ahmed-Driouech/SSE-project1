@@ -37,14 +37,19 @@ For this project we designed an experimental setup to try and ensure accurate an
 
 ### Test Device
 
-The experiments were conducted on a MacBook Air (M1, 2021) with the following specifications:
+The experiments were conducted on a MacBook Pro (M3, 2024) with the following specifications:
 
-- **Processor:** Apple M1 (8-core CPU)
+- **Processor:** Apple M3 (8-core CPU)
 - **Graphics:** Integrated Apple GPU (8-core)
-- **Memory:** 8 GB LPDDR4
-- **Storage:** 256 GB SSD (NVMe)
+- **Memory:** 18 GB LPDDR4
+- **Storage:** 512 GB SSD (NVMe)
 - **Power Source:** Connected to the original Apple charger
 - **Peripherals:** No external devices were connected during testing
+
+We used the following browsers:
+  - **Google Chrome:** 133.0.6943.127
+  - **Safari:** 17.3
+  
 
 ### PDF Readers and Automation Tools
 
@@ -66,7 +71,7 @@ To isolate the PDF reader as the primary variable affecting energy consumption, 
 
 ### Operating System and Settings
 
-The device operated on **macOS Sonoma 14.2.1 (23C71)**. To maintain consistency across all test runs, the following system settings were applied:
+The device operated on **macOS Sonoma 14.3 (23C71)**. To maintain consistency across all test runs, the following system settings were applied:
 
 - Screen brightness was set to a constant **80%**.
 - All notifications were disabled to prevent interruptions.
