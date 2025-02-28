@@ -214,7 +214,7 @@ This study investigated the energy consumption of Safari and Chrome's built-in P
 
 # 6. Replication Package
 
-All code and data used in this study are available on [GitHub](https://github.com/ahsmi47/SSE-project1). The repository is **license-free**, meaning it can be used, modified, and redistributed without restrictions.
+All code and data used in this study are available on [GitHub](https://github.com/Ahmed-Driouech/SSE-project1.git). The repository is **license-free**, meaning it can be used, modified, and redistributed without restrictions.
 
 To **replicate the experiment**, follow these steps:
 1. Run `main.py` to execute the **measurement phase**, which will record energy consumption data.
